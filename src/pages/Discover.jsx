@@ -11,7 +11,26 @@ const genreTitle='Pop'
                 <h2 style={{fontWeight:"bold", fontSize:"2rem",color:"white"}}>
                     Discover {genreTitle}
                 </h2>
-                <select/>
+                <select
+                onChange={()=>{}}
+                value=""
+                className="sel"
+                >
+                {genres.map((genre)=><option key={genre.value}
+                value={genre.value}
+                >{genre.title}</option>)}
+                </select>
+                </div>
+                <div className="songcard">
+                    {[1,2,3,4,5,6,7,8,9,10].map((song,i)=>(
+                        <SongCard
+                        key={song.key}
+                        song={song}
+                        i={i}
+                        />
+                    ))}
+                    
+                
             </div>
 
         </div>

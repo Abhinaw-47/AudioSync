@@ -16,9 +16,32 @@
   margin-bottom:5rem;
   flex-direction: column
 }
+
+.sel{
+  background-color: black;
+  color: grey;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  margin-top: 2rem;
+}
+.songcard{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+
 @media (min-width:640px){
   .main{
     flex-direction: row;
+  }
+  .sel{
+    margin-top: 0;
+  }
+  .songcard{
+    justify-content: flex-start
   }
 }
 
