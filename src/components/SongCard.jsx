@@ -1,5 +1,7 @@
-const SongCard = () => (
-  <div>SongCard</div>
+const SongCard = (src) => (
+  <div>
+    <img src={src} alt="" />
+  </div>
 );
 
 export default SongCard;

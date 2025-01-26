@@ -1,9 +1,15 @@
 import { Error,Loader,SongCard } from "../components";
 import {genres} from "../assets/constants"
 import '../index.css';
+import { useGetExploreQuery } from "../redux/services/ApiCore";
+
 
 const Discover = () => {
+    const {data,isFetching,error}=useGetExploreQuery();
 const genreTitle='Pop'
+if(isFetching) return <Loader title="Loading songs..."/>
+if(error) return <Error/>
+console.log(data);
 
     return(
         <div className="disc" style={{display: "flex",flexDirection:"column"}}>
@@ -22,7 +28,7 @@ const genreTitle='Pop'
                 </select>
                 </div>
                 <div className="songcard">
-                    {[1,2,3,4,5,6,7,8,9,10].map((song,i)=>(
+                    {data.data.browseStart.sections.items[0].sectionItems.items?.map((song,i)=>(
                         <SongCard
                         key={song.key}
                         song={song}
